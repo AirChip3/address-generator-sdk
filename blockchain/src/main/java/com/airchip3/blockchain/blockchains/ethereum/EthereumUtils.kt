@@ -1,4 +1,4 @@
-//package com.airchip3.blockchain.blockchains.ethereum
+package com.airchip3.blockchain.blockchains.ethereum
 //
 //import com.airchip3.blockchain.common.Amount
 //import com.airchip3.blockchain.common.AmountType
@@ -10,7 +10,7 @@
 //import org.kethereum.extensions.toBytesPadded
 //import org.kethereum.extensions.transactions.encode
 //import org.kethereum.extensions.transactions.tokenTransferSignature
-//import org.kethereum.keccakshortcut.keccak
+import org.kethereum.keccakshortcut.keccak
 //import org.kethereum.model.Address
 //import org.kethereum.model.PublicKey
 //import org.kethereum.model.SignatureData
@@ -18,8 +18,8 @@
 //import java.math.BigDecimal
 //import java.math.BigInteger
 //
-//class EthereumUtils {
-//    companion object {
+class EthereumUtils {
+    companion object {
 //        private val tokenApproveSignature = "approve(address,uint256)".toByteArray().toKeccak().copyOf(4)
 //        private val setSpendLimitSignature = "setSpendLimit(address,uint256)".toByteArray().toKeccak().copyOf(4)
 //        private val initOTPSignature = "initOTP(bytes16,uint16)".toByteArray().toKeccak().copyOf(4) // 0x0ac81ec3
@@ -29,9 +29,9 @@
 //
 //        private const val HEX_PREFIX = "0x"
 //
-//        fun ByteArray.toKeccak(): ByteArray {
-//            return this.keccak()
-//        }
+        fun ByteArray.toKeccak(): ByteArray {
+            return this.keccak()
+        }
 //
 //        fun prepareSignedMessageData(
 //            signedHash: ByteArray,
@@ -914,5 +914,5 @@
 //            val messageParsed = TangemEIP712JsonParser(MoshiAdapter()).parseMessage(rawMessage)
 //           return typedDataHash(messageParsed.message, messageParsed.domain)
 //        }
-//    }
-//}
+    }
+}
