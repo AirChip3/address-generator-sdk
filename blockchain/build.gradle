@@ -48,6 +48,8 @@ dependencies {
     implementation "com.github.walleth.kethereum:types:$kethereum_version"
     implementation "com.github.walleth.kethereum:erc712:$kethereum_version"
     implementation("com.google.guava:guava:32.1.3-android")
+
+    implementation files('libs/ripple-core-0.0.1.jar')
 }
 //Copy类型
 task makeJar(type: Copy) {
