@@ -27,6 +27,7 @@ enum class Blockchain(
     Bitcoin("BTC", "BTC", "Bitcoin"),
     BitcoinTestnet("BTC/test", "BTC", "Bitcoin Testnet"),
     Dogecoin("DOGE", "DOGE", "Dogecoin"),
+    Ducatus("DUC", "DUC", "Ducatus"),
     Ethereum("ETH", "ETH", "Ethereum"),
     EthereumTestnet("ETH/test", "ETH", "Ethereum Testnet"),
     EthereumClassic("ETC", "ETC", "Ethereum Classic"),
@@ -36,6 +37,10 @@ enum class Blockchain(
     XRP("XRP", "XRP", "XRP Ledger"),
     Polygon("POLYGON", "MATIC", "Polygon"),
     PolygonTestnet("POLYGON/test", "MATIC", "Polygon Testnet"),
+    Litecoin("LTC", "LTC", "Litecoin"),
+    Ravencoin("ravencoin", "RVN", "Ravencoin"),
+    RavencoinTestnet("ravencoin/test", "RVN", "Ravencoin Testnet"),
+    Dash("DASH", "DASH", "Dash"),
     ;
 
     fun decimals(): Int = when (this) {
@@ -46,7 +51,10 @@ enum class Blockchain(
         Bitcoin, BitcoinTestnet,
         Binance, BinanceTestnet,
         Dogecoin,
-
+        Ducatus,
+        Litecoin,
+        Dash,
+        Ravencoin, RavencoinTestnet,
         -> 8
         Arbitrum, ArbitrumTestnet,
         Ethereum, EthereumTestnet,
@@ -74,7 +82,11 @@ enum class Blockchain(
     private fun getAddressService(): AddressService {
         return when (this) {
             Bitcoin, BitcoinTestnet,
+            Litecoin,
             Dogecoin,
+            Ducatus,
+            Dash,
+            Ravencoin, RavencoinTestnet,
             -> BitcoinAddressService(this)
             Arbitrum, ArbitrumTestnet,
             Ethereum, EthereumTestnet,
